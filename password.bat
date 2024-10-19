@@ -1,11 +1,11 @@
 @echo off
 if "%1"=="--help" (
-  rem POSIX fully-portable filenames: A–Z a–z 0–9 - _ .
+  rem POSIX fully-portable filenames: A-Z a-z 0-9 - _ .
   echo password [--help] [--version] [--length n] [--lower n] [--upper n] [--digit n] [--special n] [--chars "-_"]
   goto :eof
 )
 if "%1"=="--version" (
-  echo password v1.4.0 2024-09-27 JMS
+  echo password v1.4.1 2024-10-18 JMS
   goto :eof
 )
 setlocal EnableDelayedExpansion

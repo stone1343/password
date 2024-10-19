@@ -6,7 +6,7 @@ trap cleanup SIGINT SIGTERM ERR EXIT
 script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)
 
 version() {
-  echo password.sh v1.4.0 2024-09-27 JMS
+  echo password.sh v1.4.1 2024-10-18 JMS
   exit
 }
 
@@ -68,7 +68,7 @@ defaults() {
   upper=1
   digit=1
   special=1
-  chars="-_" # POSIX fully-portable filenames: A–Z a–z 0–9 - _ .
+  chars="-_" # POSIX fully-portable filenames: A-Z a-z 0-9 - _ .
 }
 
 parse_parameters() {
