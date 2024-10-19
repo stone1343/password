@@ -6,7 +6,7 @@ trap cleanup SIGINT SIGTERM ERR EXIT
 script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)
 
 help() {
-  cat <<EOF
+  cat<<EOF
 $(basename "${BASH_SOURCE[0]}") [--help] [--version] [--length n] [--lower n] [--upper n] [--digit n] [--special n] [--chars '$chars']
 
 A very simple and flexible password generator
