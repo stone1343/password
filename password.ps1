@@ -1,11 +1,11 @@
-  # password v1.4.1 2024-10-18 JMS
+# password v1.4.1 2024-10-20 JMS
 Param (
   $length=12,
   $lower=1,
   $upper=1,
   $digit=1,
   $special=1,
-  $chars='-_' # POSIX fully-portable filenames: A-Z a-z 0-9 - _ .
+  $chars='-_'
   )
 # No specific reason why 100, it seems there should be an upper limit, 100 seems emore than enough
 if ($length -gt 100) {

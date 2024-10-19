@@ -1,12 +1,28 @@
 @echo off
 
 if "%1"=="--help" (
-  rem POSIX fully-portable filenames: A-Z a-z 0-9 - _ .
-  echo password [--help] [--version] [--length n] [--lower n] [--upper n] [--digit n] [--special n] [--chars "-_"]
+  echo %~n0 [--help] [--version] [--length n] [--lower n] [--upper n] [--digit n] [--special n] [--chars "-_"]
+  echo.
+  echo A very simple and flexible password generator
+  echo.
+  echo Available parameters:
+  echo.
+  echo --length   Password length, maximum 100
+  echo --lower    Minimum number of lowercase letters
+  echo --upper    Minimum number of uppercase letters
+  echo --digit    Minimum number of digits
+  echo --special  Minimum number of special characters
+  echo --chars    Allowable special characters
+  echo.
+  echo --lower, --upper, --digit and --special must specify an integer ^>= 0 ^(0 meaning 'not allowed'^).
+  echo.
+  echo Defaults are equivalent to:
+  echo.
+  echo %~n0 --length 12 --lower 1 --upper 1 --digit 1 --special 1 --chars "-_"
   goto :eof
 )
 if "%1"=="--version" (
-  echo password v1.4.1 2024-10-18 JMS
+  echo v1.4.1 2024-10-20 JMS
   goto :eof
 )
 

@@ -5,19 +5,13 @@ trap cleanup SIGINT SIGTERM ERR EXIT
 
 script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)
 
-version() {
-  echo password.sh v1.4.1 2024-10-18 JMS
-  exit
-}
-
-usage() {
+help() {
   cat <<EOF
-Usage:
-  $(basename "${BASH_SOURCE[0]}") [--help] [--version] [--length n] [--lower n] [--upper n] [--digit n] [--special n] [--chars '$chars']
+$(basename "${BASH_SOURCE[0]}") [--help] [--version] [--length n] [--lower n] [--upper n] [--digit n] [--special n] [--chars '$chars']
 
-A very flexible password generator
+A very simple and flexible password generator
 
-Available options:
+Available parameters:
 
 --length   Password length, maximum 100
 --lower    Minimum number of lowercase letters
@@ -29,9 +23,14 @@ Available options:
 --lower, --upper, --digit and --special must specify an integer >= 0 (0 meaning 'not allowed').
 
 Defaults are equivalent to:
-$(basename "${BASH_SOURCE[0]}") --length $length --lower $lower --upper $upper --digit $digit --special $special --chars '$chars'
 
+$(basename "${BASH_SOURCE[0]}") --length $length --lower $lower --upper $upper --digit $digit --special $special --chars '$chars'
 EOF
+  exit
+}
+
+version() {
+  echo password.sh v1.4.1 2024-10-20 JMS
   exit
 }
 
@@ -68,7 +67,7 @@ defaults() {
   upper=1
   digit=1
   special=1
-  chars="-_" # POSIX fully-portable filenames: A-Z a-z 0-9 - _ .
+  chars="-_"
 }
 
 parse_parameters() {
@@ -76,7 +75,7 @@ parse_parameters() {
     case "${1-}" in
     --help)
       defaults
-      usage
+      help
       ;;
     --version)
       version
