@@ -1,4 +1,5 @@
 @echo off
+
 if "%1"=="--help" (
   rem POSIX fully-portable filenames: A-Z a-z 0-9 - _ .
   echo password [--help] [--version] [--length n] [--lower n] [--upper n] [--digit n] [--special n] [--chars "-_"]
@@ -8,6 +9,10 @@ if "%1"=="--version" (
   echo password v1.4.1 2024-10-18 JMS
   goto :eof
 )
+
+rem From https://stackoverflow.com/questions/3551888/pausing-a-batch-file-when-double-clicked-but-not-when-run-from-a-console-window 2017-08-16 JMS (see below)
+echo %CMDCMDLINE% | findstr /i /c:"%~nx0">nul && set standalone=1
+
 setlocal EnableDelayedExpansion
 set dpn0=%~dpn0
 
@@ -45,3 +50,6 @@ if not "!special!"=="" set "parameters=!parameters! -special !special!"
 if not "!chars!"=="" set "parameters=!parameters! -chars '!chars!'"
 call powershell -ExecutionPolicy Unrestricted -Command "& !dpn0!.ps1 !parameters!"
 endlocal
+
+rem From https://stackoverflow.com/questions/3551888/pausing-a-batch-file-when-double-clicked-but-not-when-run-from-a-console-window 2017-08-16 JMS (see above)
+if defined standalone pause
