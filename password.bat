@@ -67,4 +67,3 @@ endlocal
 
 rem From https://stackoverflow.com/questions/3551888/pausing-a-batch-file-when-double-clicked-but-not-when-run-from-a-console-window 2017-08-16 JMS (see above)
 if defined standalone pause
-jms
