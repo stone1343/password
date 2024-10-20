@@ -22,3 +22,4 @@ cp password.sh ~/bin
 
 password.sh --help
 ```
+jms

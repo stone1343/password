@@ -128,3 +128,4 @@ remaining=$(($length-$lower-$upper-$digit-$special))
 password=$(shuffle "$password")
 
 echo "$password"
+jms
