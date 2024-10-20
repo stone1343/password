@@ -11,8 +11,6 @@ $(basename "${BASH_SOURCE[0]}") [--help] [--version] [--length n] [--lower n] [-
 
 A very simple and flexible password generator
 
-Available parameters:
-
 --length   Password length, maximum 100
 --lower    Minimum number of lowercase letters
 --upper    Minimum number of uppercase letters

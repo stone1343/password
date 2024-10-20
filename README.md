@@ -1,6 +1,6 @@
 # password
 
-A very simple and flexible password generator
+A very simple and flexible password generator for Windows and Linux
 
 ## Windows
 

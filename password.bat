@@ -5,8 +5,6 @@ if "%1"=="--help" (
   echo.
   echo A very simple and flexible password generator
   echo.
-  echo Available parameters:
-  echo.
   echo --length   Password length, maximum 100
   echo --lower    Minimum number of lowercase letters
   echo --upper    Minimum number of uppercase letters

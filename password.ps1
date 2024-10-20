@@ -1,4 +1,4 @@
-# password v1.4.1 2024-10-20 JMS
+# password.ps1 2024-10-20 JMS
 Param (
   $length=12,
   $lower=1,
