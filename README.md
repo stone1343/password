@@ -4,7 +4,7 @@ A very simple and flexible password generator for Windows and Linux
 
 ## Windows
 
-After downloading from GitHub, copy password.bat and password.ps1 to a location in PATH, e.g.
+Dwnload from GitHub, then copy password.bat and password.ps1 to a location in PATH, e.g.
 
 ```bat
 git clone --depth 1 https://github.com/stone1343/password.git
@@ -17,7 +17,7 @@ password --help
 
 ## Linux
 
-Download from GitHub, copy password.sh to a location in PATH, e.g.
+Download from GitHub, then copy password.sh to a location in PATH, e.g.
 
 ```bash
 git clone --depth 1 https://github.com/stone1343/password.git
